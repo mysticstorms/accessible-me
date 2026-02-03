@@ -12,20 +12,22 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<header>
-  <ul class="skip-links">
-    <li><a href="#main">Skip to main content</a></li>
-    <li><a href="#meet-owner">Skip to meet the owner</a></li>
-    <li><a href="#address">Skip to address</a></li>
-    <li><a href="#contact">Skip to contact</a></li>
-  </ul>
-</header>
-<!--skip link code so we can skip to dif area of page-->
-
 <body>
+  <header>
+    <ul class="skip-links">
+      <li><a href="#main">Skip to main content</a></li>
+      <li><a href="#meet-owner">Skip to meet the owner</a></li>
+      <li><a href="#address">Skip to address</a></li>
+      <li><a href="#contact">Skip to contact</a></li>
+    </ul>
+  </header>
+  <!--skip link code so we can skip to dif area of page-->
+
+
   <div class="container">
     <div class="site-header">
       <h1>Jam Box Studios</h1>
+      
       <div class="main-nav" role="navigation" aria-label="main-nav"> <!-- added role for navigation and aria-label for more context-->
         <ul>
           <li><a href="#">Home</a></li>
@@ -34,21 +36,32 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="https://picsum.photos/1200/900" class="banner" role="banner"> <!-- added role for banner image. i chose banner cause that what the class said and it made more sense too us banner-->
+
     </div>
+
+    <div class="banner-container">
+      <img src="https://picsum.photos/1200/900" alt="changing image" class="banner" role="banner"> <!-- added role for banner image. i chose banner cause that what the class said and it made more sense too us banner-->
+    </div>
+
     <div class="main-content" role="main" id="main"> <!-- added role for the main content area and id tag for skip link-->
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      <div class="welcome-text">
+        <h1>Welcome to Jam Box</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      </div>
+
       <div class="owner" role="contactinfo">
         <h1 id="meet-owner">Meet the owner</h1> <!--added id for skip link-->
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+          <ul itemscope itemtype="https://schema.org/Person"> <!--added schema to the owner info. i used name since they on had givenName or familyName but no fullName ironically-->
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h1 id="address">Address</h1> <!--added id for skip link-->
+      </div>
+      
+      <div class="address" role="location" id="address" itemscope itemtype="https://schema.org/Place"> 
+        <h1 itemprop="address">Address</h1> <!--added id for skip link-->
         <p>
           Jambox Studios
           123 Guitar Road,
@@ -56,24 +69,33 @@
           B3T 0L0
         </p>
       </div>
+
       <div class="contact-section" role="form" id="contact"> <!--added form role cause this is a form obvs. and id for skip link-->
         <h1>Contact Us</h1>
         <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
+        
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Full Name">
+
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Email">
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Subject">
+
+          <label for="message">Your Message</label>
+          <textarea id="message"></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
     </div>
+    <!--i fixed the labels in the form and id's-->
 
-    <div class="site-footer" role="contentinfo" id="studio">
-      &copy; 2021 Jam Box Studios
-    </div>
+    <footer>
+     <div class="site-footer" role="contentinfo" id="studio">
+        &copy; 2021 Jam Box Studios
+      </div>
+    </footer>
   </div>
 </body>
-
 </html>
