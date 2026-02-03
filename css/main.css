@@ -1,3 +1,24 @@
+.skip-links{
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+/* remove list stlyle for skip link ul and the default padding+margins */
+
+.skip-links a{
+  position: absolute;
+  top: -3em;
+  background-color: black;
+  color:white;
+  padding: .5em 1em;
+}
+/* hide skip links off screen by default and stylizes it so it's very visible using a contrasting background and text color to the main web page */
+
+.skip-links a:focus{
+  top: 0;
+}
+/* when u press tab it focuses on the link and brings it to view. if you keep tabbing it changes to the next skip link link*/
+
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
   background-color: rgb(228, 228, 228);
